@@ -246,9 +246,8 @@ public partial class Galgame : ObservableObject, IDisplayableGameObject
     /// 获取用来保存meta信息的galgame，用于序列化
     /// </summary>
     /// <param name="metaPath">meta文件夹路径</param>
-    /// <param name="gamePath">游戏文件夹路径</param>
     /// <returns></returns>
-    public Galgame GetMetaCopy(string metaPath, string gamePath)
+    public Galgame GetMetaCopy(string metaPath)
     {
         Dictionary<string, int> playTime = new();
         foreach (var (key, value) in PlayedTime)

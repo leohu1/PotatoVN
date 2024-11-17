@@ -1601,6 +1601,12 @@
   <data name="LocalFolderSourceService_MoveOutDescription" xml:space="preserve">
     <value>删除文件夹：{0}</value>
   </data>
+  <data name="ZipSourceService_MoveInDescription" xml:space="preserve">
+    <value>压缩游戏至：{0}</value>
+  </data>
+  <data name="ZipSourceService_MoveOutDescription" xml:space="preserve">
+    <value>删除压缩文件：{0}</value>
+  </data>
   <data name="ChangeSourceDialog_OperateDescription.Text" xml:space="preserve">
     <value>点击确定后，PotatoVN将：</value>
   </data>
@@ -1622,6 +1628,12 @@
   <data name="LocalFolderSourceMoveTask_MoveIn_Title" xml:space="preserve">
     <value>复制游戏任务</value>
   </data>
+  <data name="ZipSourceMoveTask_MoveIn_Title" xml:space="preserve">
+    <value>复制游戏任务</value>
+  </data>
+  <data name="ZipSourceMoveTask_MoveIn_Progress" xml:space="preserve">
+    <value>正在复制 {0}</value>
+  </data>
   <data name="LocalFolderSourceMoveTask_MoveIn_Progress" xml:space="preserve">
     <value>正在复制 {0}</value>
   </data>
@@ -1629,6 +1641,9 @@
     <value>成功将游戏复制至另一个源</value>
   </data>
   <data name="LocalFolderSourceMoveTask_MoveIn_Success" xml:space="preserve">
+    <value>成功将游戏 {0} 复制到 {1}</value>
+  </data>
+  <data name="ZipSourceMoveTask_MoveIn_Success" xml:space="preserve">
     <value>成功将游戏 {0} 复制到 {1}</value>
   </data>
   <data name="SourceMoveTask_Title" xml:space="preserve">
@@ -1639,6 +1654,9 @@
   </data>
   <data name="LocalFolderSourceService_MoveOutError" xml:space="preserve">
     <value>一个游戏只能属于一个本地文件夹，要移入其他本地文件夹必须从当前本地文件夹中移出。</value>
+  </data>
+  <data name="ZipSourceService_MoveOutError" xml:space="preserve">
+    <value>一个游戏只能属于一个压缩文件夹，要移入其他本地文件夹必须从当前压缩文件夹中移出。</value>
   </data>
   <data name="SourceMoveTask_MovingIn_Fail" xml:space="preserve">
     <value>移入源任务失败</value>
@@ -1663,6 +1681,15 @@
   </data>
   <data name="LocalFolderSourceMoveTask_MoveOut_Success" xml:space="preserve">
     <value>成功删除文件夹 {0}</value>
+  </data>
+  <data name="ZipSourceMoveTask_MoveOut_Title" xml:space="preserve">
+    <value>从文件夹中删除游戏任务</value>
+  </data>
+  <data name="ZipSourceMoveTask_MoveOut_Progress" xml:space="preserve">
+    <value>正在删除 {0}</value>
+  </data>
+  <data name="ZipSourceMoveTask_MoveOut_Success" xml:space="preserve">
+    <value>成功删除 {0} 从 {1}</value>
   </data>
   <data name="MixedPhraserOrderDialog_Title" xml:space="preserve">
     <value>设置信息源优先级</value>

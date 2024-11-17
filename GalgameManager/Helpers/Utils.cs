@@ -184,4 +184,71 @@ public static class Utils
                 return parsedDate;
         return DateTime.MinValue;
     }
+
+    /// <summary>
+    /// 获取分块压缩的所有分块
+    /// eg:
+    /// 
+    /// Clover Day’s Plus.part1.rar
+    /// ->
+    /// Clover Day’s Plus.part1.rar
+    /// Clover Day’s Plus.part2.rar
+    /// Clover Day’s Plus.part3.rar
+    /// 
+    /// EREWHON（乌有乡）.7z.001
+    /// ->
+    /// EREWHON（乌有乡）.7z.001
+    /// EREWHON（乌有乡）.7z.002
+    /// </summary>
+    /// <param name="zipFilePath"></param>
+    /// <returns></returns>
+    public static List<string> GetZipParts(string zipFilePath)
+    {
+        if (!File.Exists(zipFilePath)) return [];
+        if (zipFilePath.EndsWith(".part1.rar"))
+        {
+            List<string> parts = [zipFilePath];
+            var basePath = zipFilePath[^10..];
+            var i = 2;
+            while (true)
+            {
+                if (File.Exists(basePath + $".part{i}.rar"))
+                {
+                    parts.Add(basePath + $".part{i}.rar");
+                }
+                else
+                {
+                    break;
+                }
+
+                i++;
+            }
+
+            return parts;
+        }
+
+        if (zipFilePath.EndsWith(".7z.001"))
+        {
+            List<string> parts = [zipFilePath];
+            var basePath = zipFilePath[^7..];
+            var i = 2;
+            while (true)
+            {
+                if (File.Exists(basePath + $".7z.{i:d3}"))
+                {
+                    parts.Add(basePath + $".7z.{i:d3}");
+                }
+                else
+                {
+                    break;
+                }
+
+                i++;
+            }
+
+            return parts;
+        }
+
+        return [zipFilePath];
+    }
 }

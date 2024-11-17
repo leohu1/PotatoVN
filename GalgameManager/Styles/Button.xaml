@@ -42,7 +42,9 @@
                         </VisualStateManager.VisualStateGroups>
 
                         <!-- 背景矩形 -->
-                        <Rectangle x:Name="BackgroundRectangle" Fill="Transparent" />
+                        <Rectangle x:Name="BackgroundRectangle" Fill="Transparent" 
+                                   RadiusX="4"
+                                   RadiusY="4"/>
 
                         <!-- 内容呈现器 -->
                         <ContentPresenter

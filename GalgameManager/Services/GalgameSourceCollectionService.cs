@@ -152,6 +152,10 @@ public class GalgameSourceCollectionService : IGalgameSourceCollectionService
         return galgameSource;
     }
     
+    /// <summary>
+    /// 移除库，非物理
+    /// </summary>
+    /// <param name="source"></param>
     public async Task DeleteGalgameFolderAsync(GalgameSourceBase source)
     {
         var delete = false;
@@ -207,7 +211,15 @@ public class GalgameSourceCollectionService : IGalgameSourceCollectionService
         }
         target.DeleteGalgame(game);
     }
-
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="moveInSrc"></param>
+    /// <param name="moveInPath"></param>
+    /// <param name="moveOutSrc"></param>
+    /// <param name="game"></param>
+    /// <returns></returns>
     public BgTaskBase MoveAsync(GalgameSourceBase? moveInSrc, string? moveInPath, GalgameSourceBase? moveOutSrc, Galgame game)
     {
         if (game.Sources.Any(s => s == moveInSrc))

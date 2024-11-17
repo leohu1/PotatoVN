@@ -15,7 +15,6 @@ public sealed partial class ChangeSourceDialog
 {
     public List<GalgameSourceBase> Sources { get; }
     public List<GalgameSourceBase> GalgameSources { get; }
-    public string TargetPath => _targetPath;
     public GalgameSourceBase MoveInSource => Sources[_selectSourceIndex];
     public GalgameSourceBase? MoveOutSource => RemoveFromSource ? GalgameSources![RemoveFromSourceIndex] : null;
     
@@ -33,7 +32,6 @@ public sealed partial class ChangeSourceDialog
     [ObservableProperty] private string? _warningText;
 
     private readonly Galgame _game;
-    private string _targetPath = string.Empty;
     private (long total, long used) _space;
 
     public ChangeSourceDialog(Galgame game)
@@ -62,7 +60,6 @@ public sealed partial class ChangeSourceDialog
             _space = (-1, -1);
             Update();
             GalgameSourceBase selectedSource = Sources[value];
-            _targetPath = selectedSource.Path;
             IGalgameSourceService service = SourceServiceFactory.GetSourceService(selectedSource.SourceType);
             // 空间
             SpacePanelVisibility = Visibility.Collapsed;
@@ -108,7 +105,7 @@ public sealed partial class ChangeSourceDialog
         OperatePanelDescriptionVisibility = IsPrimaryButtonEnabled.ToVisibility();
         GalgameSourceBase selectedSource = Sources[SelectSourceIndex];
         MoveInDescription = SourceServiceFactory.GetSourceService(selectedSource.SourceType)
-            .GetMoveInDescription(selectedSource, _targetPath);
+            .GetMoveInDescription(selectedSource, selectedSource, _game, null);
         if (_removeFromSource)
         {
             GalgameSourceBase selectedMoveOutSource = GalgameSources[RemoveFromSourceIndex];

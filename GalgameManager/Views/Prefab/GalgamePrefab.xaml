@@ -15,7 +15,7 @@
     </UserControl.Resources>
 
     <Grid MinWidth="{x:Bind CalcValue(175), Mode=OneWay}" 
-          MinHeight="{x:Bind CalcValue(300), Mode=OneWay}" 
+          MinHeight="{x:Bind CalcValue(200), Mode=OneWay}" 
           ContextFlyout="{x:Bind Flyout}" Padding="{StaticResource XSmallLeftTopRightBottomMargin}">
         <StackPanel HorizontalAlignment="Center">
             <Grid

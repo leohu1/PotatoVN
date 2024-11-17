@@ -26,11 +26,12 @@
             </Grid.ColumnDefinitions>
             <Button Grid.Column="0" Style="{ThemeResource TransparentButtonWithHover}"
                     Margin="10 0 0 0"
-                    Command="{x:Bind TitleClickCommand, Mode=OneWay}">
+                    Command="{x:Bind TitleClickCommand, Mode=OneWay}"
+                    CornerRadius="4">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="{x:Bind Title, Mode=OneWay}"
                                Visibility="{x:Bind Title, Converter={StaticResource AnyToVisibilityConverter}, Mode=OneWay}"
-                               FontSize="20" FontWeight="SemiLight" />
+                               FontSize="20" FontWeight="SemiLight" Padding="8 2 2 8"/>
                     <control:ConditionalFontIcon FluentGlyph="&#xE76C;" Symbol="Next" IconFontSize="15"
                                                  Foreground="IndianRed"
                                                  Margin="10 2 0 0"/>
